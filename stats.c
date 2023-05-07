@@ -32,6 +32,7 @@ int main(int argc, char** argv) {
                                 201,   6,  12,  60,   8,   2,   5,  67,
                                   7,  87, 250, 230,  99,   3, 100,  90};
     
+    // print the statistics of the Test Array
     print_statistics(test, SIZE);
     
     return 0;
