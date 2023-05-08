@@ -42,6 +42,9 @@ void print_statistics(unsigned char arr[], unsigned char length){
     printf("The Array:\n");
     print_array(arr, length);
     unsigned char median = find_median(arr, length);
+    
+    printf("The Array Sorted:\n");
+    print_array(arr, length);
     unsigned char mean = find_mean(arr, length);
     unsigned char maximum = find_maximum(arr, length);
     unsigned char minimum = find_minimum(arr, length);
@@ -101,12 +104,15 @@ unsigned char find_minimum(unsigned char arr[], unsigned char length) {
 
 void sort_array(unsigned char arr[], unsigned char length) {
     int i = 0;
+    int j = 0;
     int replace = 0;
-    for(i = 1; i < length - 1; i++){
-        if(arr[i] < arr[i+1]){
-            replace = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = replace;
+    for(i = 0; i < length - 1; i++){
+        for(j = 0; j < length; j++){
+            if(arr[j] < arr[i]){
+                replace = arr[i];
+                arr[i] = arr[j];
+                arr[j] = replace;
+            }
         }
     }
 }
